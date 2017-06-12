@@ -1,1 +1,2 @@
-# mysite \n Django tutorial
+# mysite 
+Django tutorial
