@@ -1,3 +1,7 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+
 {% if latest_question_list %}
     <ul>
     {% for question in latest_question_list %}
@@ -7,3 +11,7 @@
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
+
+<p>
+This is acctually a quite interesting site. Or... it will be when it is all done. Maybe I should add a gif of an under-construction-sign.
+</p>
