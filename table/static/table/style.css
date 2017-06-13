@@ -1,9 +1,9 @@
 head {
-  background-color: black;
+  background-color: honeydew;
 }
 
 body {
-  background-color: black;
+  background-color: honeydew;
 }
 
 h1 {
@@ -15,7 +15,6 @@ h1 {
 li {
     color: salmon;
 }
-
 p {
   color: orange;
   font-size: 13;
