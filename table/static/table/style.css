@@ -1,0 +1,36 @@
+head {
+  background-color: black;
+}
+
+body {
+  background-color: black;
+}
+
+h1 {
+  color: yellow;
+  text-align: right;
+  font-family: monospace;
+}
+
+li {
+    color: salmon;
+}
+
+p {
+  color: orange;
+  font-size: 13;
+  font-family: fantasy;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th {
+  font-style: italic;
+  font-variant: small-caps;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
