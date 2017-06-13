@@ -2,11 +2,15 @@ import datetime
 from django.db import models
 from django.utils import timezone
 
+
 class TableViewCell(models.Model):
-    published_date = models.DateTimeField('date publishe')
     cell_name = models.CharField(max_length=100)
     cell_row = models.IntegerField()
     cell_column = models.IntegerField()
 
     def __str__(self):
-        return "<%s : %i>".format(self.cell_name, self.cell_number)
+        return '{0}: ({1}, {2})'.format(self.cell_name, self.cell_row, self.cell_column)
+
+    @staticmethod
+    def order_cells():
+        return TableViewCell.objects.all().order_by('cell_name')
