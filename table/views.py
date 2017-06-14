@@ -12,4 +12,8 @@ class TableView(generic.ListView):
     context_object_name = 'cell'
 
     def get_queryset(self):
-        return TableViewCell.objects.all()
+        return TableViewCell.objects.all().order_by('cell_name')
+
+def unorder(request):
+    tc = TableViewCell.objects.all().order_by('cell_row')
+    
