@@ -1,38 +1,68 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     {% load static %}
 
     <link rel="stylesheet" type="text/css" href="{% static 'table/style.css' %}" />
-  </head>
+    <link rel="scriptstyle" type="text/css" href="{% static 'table/scriptstyle.css' %}"/>
+</head>
+<body>
+<h1>
+    This is one amazing table.
+</h1>
+<!--<img src="background.gif" alt="Under construction" height="42" width="42">-->
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
 
-  <body>
-    <h1>
-      This is one amazing table.
-    </h1>
+<p id="cell_list">{{ cell }}</p>
 
-    <!--<img src="background.gif" alt="Under construction" height="42" width="42">-->
+<script type="text/javascript" src="{% static 'table/script1.js' %}"></script>
+<table>
+</table>
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim ed ede laborum.
+</p>
 
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
-    <p>
-    <script type="text/javascript" src="{% static 'table/script1.js' %}"></script>
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
+<p>
+    <script type="text/javascript">
+        document.write("Scripting is going on");
+        documnt.write(document.getElementById("cell_list"));
+    </script>
+</p>
 
+
+<ul>
+    {% for c in cell %}
+        <li>{{ c.cell_name }}</li>
+    {% endfor %}
+</ul>
+<p>
+    The list has ended here.
+</p>
+<p style="color:darkred;font-family:monospace">
+    {{ cell }} <br>
+    {{ cell|length }}
     <ul>
-        {% for c in cell %}
-        <li>
-            {{ c.cell_name }}
-        </li>
-        {% endfor %}
+    {% for c in cell %}
+        <li>{{ c }}</li>
+        <li>{{ c.cell_name }}</li>
+    {% endfor %}
     </ul>
-  <p>
-      The list has ended here.
-  </p>
+<br>
+<table>
+    {% for c in cell %}
+        {% if forloop.counter0|divisibleby:"3" %}
+            <tr>
+        {% endif %}
+        <td>{{ c }}</td>
+        {% if forloop.counter|divisibleby:"3" %}
+            </tr>
+        {% endif %}
+    {% endfor %}
+</table>
+</p>
 
-  </body>
+
+</body>
 </html>
