@@ -10,4 +10,3 @@ class TableViewCell(models.Model):
 
     def __str__(self):
         return '{0}: ({1}, {2})'.format(self.cell_name, self.cell_row, self.cell_column)
-
