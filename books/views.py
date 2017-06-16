@@ -18,7 +18,6 @@ class AuthorView(generic.DetailView):
     model = Author
     template_name = 'books/author.html'
 
-
 class BookView(generic.DetailView):
     """Shows details of one book"""
     model = Book

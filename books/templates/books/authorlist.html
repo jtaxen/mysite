@@ -1,6 +1,11 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<h2>Deutsche Schriftsteller, deren Namen alliterieiren</h2>
 <ul>
 {% for author in author_list %}
-    <li><a href="https://de.wikipedia.org/wiki/search/gunter_grass/">{{ author.surname }}</a>
+    <li><a href="{% url 'books' pk=author.surname %}">{{ author.first_name }} {{ author.surname }}</a>
         <ul>
             {% for book in author.book_set.all %}
                 <li>{{ book.name }} (<i>{{ book.published }}</i>) </li>
@@ -9,3 +14,5 @@
     </li>
 {% endfor %}
 </ul>
+</body>
+</html>
