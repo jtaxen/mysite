@@ -1,0 +1,11 @@
+<ul>
+{% for author in author_list %}
+    <li><a href="https://de.wikipedia.org/wiki/search/gunter_grass/">{{ author.surname }}</a>
+        <ul>
+            {% for book in author.book_set.all %}
+                <li>{{ book.name }} (<i>{{ book.published }}</i>) </li>
+            {% endfor %}
+        </ul>
+    </li>
+{% endfor %}
+</ul>

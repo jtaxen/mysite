@@ -4,6 +4,7 @@ from . import views
 
 app_name = 'books'
 urlpatterns = {
-    url(r'^([a-z]+)/$', views.AuthorView.as_view(), name='author'),
-    url(r'^([a-z]+)/([a-z]+)/$', views.BookView.as_view(), name='book'),
+    url(r'^$', views.AuthorListView.as_view(), name='authorlist'),
+    url(r'^(?P<pk>)/$', views.AuthorView.as_view(), name='author'),
+    url(r'^(?P<pk>)/(<book_id>)/$', views.BookView.as_view(), name='book'),
 }
